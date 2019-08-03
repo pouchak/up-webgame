@@ -74,9 +74,9 @@ Game = (function(win, doc){
 				};
 
 			this.bgImage.src = 'images/stars-default.gif';//@TODO dopesnt work in firefox
-			this.heroImage.src = 'images/hero2.png';
-			this.monsterImage.src = 'images/monster2.png';
-			this.bulletImage.src = "images/bullet2.png";
+			this.heroImage.src = 'images/ship-center.png';
+			this.monsterImage.src = 'images/skull-1.gif';
+			this.bulletImage.src = "images/bullet-vertical.png";
 			
 			return this;
 		},
@@ -152,8 +152,8 @@ Game = (function(win, doc){
 			//player holds space bar
 			if(32 in this.keysDown) {
 				new Bullet();// @todo one bullet does not replace the other
-				this.bullet.x = this.hero.x + 20;
-				this.bullet.y = this.hero.y + 8;
+				this.bullet.x = this.hero.x + 8;
+				this.bullet.y = this.hero.y - 10;
 			}
 			if(80 in this.keysDown) {//what is 80? its p!
 				if(this.isPaused == false){
