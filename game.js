@@ -86,7 +86,7 @@ Game = (function(win, doc){
 			this.hero.y = this.canvas.height / 2;*/
 			// Throw the monster somewhere on the screen randomly
 			this.monster.x = 32 + (Math.random() * (this.canvas.width - 64));
-			this.monster.y = -32/*32 + (Math.random() * (this.canvas.height - 64));*/
+			this.monster.y = -32
 
 			return this;
 		},
@@ -186,12 +186,12 @@ Game = (function(win, doc){
 				this.hero.x = this.canvas.width - 32;
 			}
 
-			//if hero hit the top
+			//if hero hit the top -- not needed
 			if(this.hero.y <= 0) {
 				this.hero.y = 0;
 			}
 
-			//if hero hit the bottom
+			//if hero hit the bottom -- not needed
 			if(this.hero.y >= this.canvas.height - 32) {
 				this.hero.y = this.canvas.height - 32;
 			}
@@ -201,7 +201,7 @@ Game = (function(win, doc){
 				this.loseLife();
 			}
 			
-			//Did the bullet hit the monster?
+			//Bullet Hits Monster
 			if (this.bullet && this.bullet.x < (this.monster.x + 15) && this.monster.x < (this.bullet.x + 15) && this.bullet.y <= (this.monster.y + 15) && this.monster.y <= (this.bullet.y + 15)) {
 				this.monsterHit();
 			}
@@ -214,7 +214,7 @@ Game = (function(win, doc){
 			//move the monster
 			this.monster.y = this.monster.y+1;
 			
-			//if the monster hit the left side, reset the level and lose a life
+			//if the monster hit bottom, reset and lose life
 			if(this.monster.y > this.canvas.height) {
 				this.loseLife();
 				this.reset();
@@ -253,13 +253,13 @@ Game = (function(win, doc){
 
 	return Game;//return values in game class
 
-}(window, document));//i dont know what these arguments mean?!
+}(window, document));//pass window and document as arguments
 //====================================================================================
 
 //====================================================================================
 //	HERO CLASS
 //====================================================================================
-Hero = (function(win, doc) {
+Hero = (function(win, doc) {//@TODO - es6 all of this
 
 	function Hero() {
 		this.speed = 300;//256;
