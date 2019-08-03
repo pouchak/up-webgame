@@ -37,7 +37,7 @@ Game = (function(win, doc){
 
 			this.hero = new Hero();//new class of hero
 			this.monster = new Monster()
-			this.bullet = [];
+			this.bullet = new Bullet();
 
 			this.attachEvents();//accessing global variable for key input
 
@@ -74,9 +74,9 @@ Game = (function(win, doc){
 				};
 
 			this.bgImage.src = 'images/stars-default.gif';//@TODO dopesnt work in firefox
-			this.heroImage.src = 'images/ship-center.png';
-			this.monsterImage.src = 'images/skull-1.gif';
-			this.bulletImage.src = "images/bullet-vertical.png";
+			this.heroImage.src = this.hero.image;//'images/ship-center.png';
+			this.monsterImage.src = this.monster.image;//'images/skull-1.gif';
+			this.bulletImage.src = this.bullet.image;//"images/bullet-vertical.png";
 			
 			return this;
 		},
@@ -262,6 +262,7 @@ Game = (function(win, doc){
 Hero = (function(win, doc) {//@TODO - es6 all of this
 
 	function Hero() {
+		this.image = 'images/ship-center.png'
 		this.speed = 300;//256;
 		this.x = 200;
 		this.y = 400;
@@ -282,6 +283,7 @@ Hero = (function(win, doc) {//@TODO - es6 all of this
 Monster = (function(win, doc) {
 
 	function Monster() {
+		this.image = 'images/skull-1.gif'
 		this.x = 0;
 		this.y = 0;
 		//this.direction = {"+", "-"};
@@ -300,6 +302,7 @@ Monster = (function(win, doc) {
 Bullet = (function(win, doc) {
 
 	function Bullet() {
+		this.image = "images/bullet-vertical.png"
 		this.x = 0;
 		this.y = 0;
 	}
