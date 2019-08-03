@@ -141,14 +141,14 @@ Game = (function(win, doc){
 		'update': function(modifier) {//updates the game info
 			// @TODO player movement should get its own function
 			//Player is holding up
-			if(38 in this.keysDown) {
+			/*if(38 in this.keysDown) {
 				this.hero.y -= this.hero.speed * modifier;
 			}
 
 			//Player is holding down
 			if(40 in this.keysDown) {
 				this.hero.y += this.hero.speed * modifier;
-			}
+			}*/
 			//player holds space bar
 			if(32 in this.keysDown) {
 				new Bullet();// @todo one bullet does not replace the other
@@ -166,13 +166,13 @@ Game = (function(win, doc){
 
 
 			//Player is holding left
-			/*if(37 in this.keysDown) {
+			if(37 in this.keysDown) {
 				this.hero.x -= this.hero.speed * modifier;
 			}
 
 			if(39 in this.keysDown) {
 				this.hero.x += this.hero.speed * modifier;
-			}*/
+			}
 
 			//if the hero hit the left side
 			//delete uneccessary
@@ -263,8 +263,8 @@ Hero = (function(win, doc) {
 
 	function Hero() {
 		this.speed = 300;//256;
-		this.x = 0;
-		this.y = 0;
+		this.x = 200;
+		this.y = 400;
 	}
 
 	Hero.prototype = {//empty method?!
