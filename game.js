@@ -85,8 +85,8 @@ Game = (function(win, doc){
 			/*this.hero.x = this.canvas.width / 2;
 			this.hero.y = this.canvas.height / 2;*/
 			// Throw the monster somewhere on the screen randomly
-			this.monster.x = 32 + (/*Math.random()*/ 2 * (this.canvas.width - 64));
-			this.monster.y = 32 + (Math.random() * (this.canvas.height - 64));
+			this.monster.x = 32 + (Math.random() * (this.canvas.width - 64));
+			this.monster.y = -32/*32 + (Math.random() * (this.canvas.height - 64));*/
 
 			return this;
 		},
@@ -212,10 +212,10 @@ Game = (function(win, doc){
 			}
 			
 			//move the monster
-			this.monster.x = this.monster.x-1;
+			this.monster.y = this.monster.y+1;
 			
 			//if the monster hit the left side, reset the level and lose a life
-			if(this.monster.x/2 < 0) {
+			if(this.monster.y > this.canvas.height) {
 				this.loseLife();
 				this.reset();
 			}
