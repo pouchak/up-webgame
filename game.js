@@ -208,7 +208,7 @@ Game = (function(win, doc){
 			
 			//Propel the bullet
 			if(this.bullet){
-				this.bullet.x = this.bullet.x+10;
+				this.bullet.y = this.bullet.y-10;
 			}
 			
 			//move the monster
