@@ -151,7 +151,7 @@ Game = (function(win, doc){
 			}*/
 			//player holds space bar
 			if(32 in this.keysDown) {
-				new Bullet();// @todo one bullet does not replace the other
+				 new Bullet();// @todo one bullet does not replace the other
 				this.bullet.x = this.hero.x + 8;
 				this.bullet.y = this.hero.y - 10;
 			}
