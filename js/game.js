@@ -1,5 +1,6 @@
 var Game, Hero, Monster, Bullet;
-
+//var Bullet = 'Bullet.js'
+//import { Bullet } from "js/Bullet.js";
 //====================================================================================
 //	GAME CLASS
 //====================================================================================
@@ -259,7 +260,7 @@ Game = (function(win, doc){
 //====================================================================================
 //	HERO CLASS
 //====================================================================================
-Hero = (function(win, doc) {//@TODO - es6 all of this
+Hero = (function(win, doc) {//@TODO implement abstracted class into main game file
 
 	function Hero() {
 		this.image = 'images/ship-center.png'
@@ -280,7 +281,7 @@ Hero = (function(win, doc) {//@TODO - es6 all of this
 //====================================================================================
 //	MONSTER CLASS
 //====================================================================================
-Monster = (function(win, doc) {
+Monster = (function(win, doc) {//@TODO implement abstracted class into main game file
 
 	function Monster() {
 		this.image = 'images/skull-1.gif'
@@ -299,7 +300,7 @@ Monster = (function(win, doc) {
 //====================================================================================
 //	BULLET CLASS
 //====================================================================================
-Bullet = (function(win, doc) {
+Bullet = (function(win, doc) {//@TODO implement abstracted class into main game file
 
 	function Bullet() {
 		this.image = "images/bullet-vertical.png"
